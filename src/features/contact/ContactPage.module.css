@@ -6,7 +6,8 @@
 .content {
   flex-grow: 1;
   min-width: 0;
-  padding: var(--space-header-top) var(--space-gutter) 80px clamp(24px, 7vw, 100px);
+  padding: var(--space-header-top) var(--space-gutter) 80px;
+  padding-inline-start: clamp(24px, 7vw, 100px);
 }
 
 .nav {

@@ -47,7 +47,7 @@ export function ExpandColumns<T>({
         )
         const href = getHref?.(item)
         return href ? (
-          <Link key={getKey(item)} to={href} {...props}>
+          <Link key={getKey(item)} to={href} viewTransition {...props}>
             {inner}
           </Link>
         ) : (

@@ -10,7 +10,7 @@
 
 .backdrop {
   position: absolute;
-  right: -120px;
+  inset-inline-end: -120px;
   top: -40px;
   width: 760px;
   max-width: 80vw;
@@ -46,7 +46,7 @@
   line-height: 1.7;
   font-weight: var(--weight-light);
   color: var(--color-ink-muted);
-  text-align: right;
+  text-align: end;
 }
 
 .controls > div {
@@ -79,7 +79,7 @@
   }
 
   .controls p {
-    text-align: left;
+    text-align: start;
   }
 
   .controls > div {

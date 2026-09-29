@@ -10,7 +10,7 @@ interface RoundButtonProps {
 export function RoundButton({ label, onClick, children }: RoundButtonProps) {
   return (
     <button type="button" className={styles.round} onClick={onClick} aria-label={label}>
-      {children}
+      <span className={styles.glyph}>{children}</span>
     </button>
   )
 }

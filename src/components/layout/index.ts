@@ -1,5 +1,6 @@
 export { Curtain } from './Curtain'
 export { Footer } from './Footer'
+export { LanguageSwitcher } from './LanguageSwitcher'
 export { Logo } from './Logo'
 export { MainNav } from './MainNav'
 export { NavCluster } from './NavCluster'

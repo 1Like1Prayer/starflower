@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Logo, MainNav } from '../../../components/layout'
+import { LanguageSwitcher, Logo, MainNav } from '../../../components/layout'
 import { BotanicalArt, Eyebrow, LineHeading } from '../../../components/ui'
 import { padNumber } from '../../../utils/format'
 import styles from './QuickOrderHero.module.css'
@@ -29,6 +29,7 @@ export function QuickOrderHero() {
           <BotanicalArt />
         </div>
         <div className={styles.nav}>
+          <LanguageSwitcher />
           <MainNav />
         </div>
         <div className={styles.steps}>

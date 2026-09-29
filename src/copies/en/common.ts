@@ -49,4 +49,7 @@ export const common = {
   filters: {
     all: 'All',
   },
+  language: {
+    label: 'Language',
+  },
 } as const

@@ -105,19 +105,19 @@
 }
 
 .before {
-  clip-path: inset(0 100% 0 0);
+  clip-path: inset(0 var(--inset-x-a) 0 var(--inset-x-b));
 }
 
 .after {
-  clip-path: inset(0 0 0 100%);
+  clip-path: inset(0 var(--inset-x-b) 0 var(--inset-x-a));
 }
 
 .before .slideArt {
-  transform: translateX(-120px) scale(1.12);
+  transform: translateX(calc(-120px * var(--dir))) scale(1.12);
 }
 
 .after .slideArt {
-  transform: translateX(120px) scale(1.12);
+  transform: translateX(calc(120px * var(--dir))) scale(1.12);
 }
 
 .details {
@@ -213,11 +213,11 @@
 }
 
 @keyframes text-from-right {
-  from { opacity: 0; transform: translateX(56px); }
+  from { opacity: 0; transform: translateX(calc(56px * var(--dir))); }
 }
 
 @keyframes text-from-left {
-  from { opacity: 0; transform: translateX(-56px); }
+  from { opacity: 0; transform: translateX(calc(-56px * var(--dir))); }
 }
 
 @media (max-width: 900px) {

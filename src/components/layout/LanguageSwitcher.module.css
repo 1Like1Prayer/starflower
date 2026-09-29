@@ -1,0 +1,40 @@
+.switcher {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 52px;
+  padding: 0 5px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, currentColor 38%, transparent);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 42px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font-size: var(--size-xs);
+  letter-spacing: 0.06em;
+  opacity: 0.62;
+  cursor: pointer;
+  transition:
+    opacity var(--motion-fast),
+    background var(--motion-base);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .option:hover {
+    opacity: 1;
+  }
+}
+
+.active {
+  opacity: 1;
+  background: color-mix(in srgb, currentColor 16%, transparent);
+}

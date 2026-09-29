@@ -19,6 +19,7 @@ export function ProductCard({ bouquet, order }: ProductCardProps) {
   return (
     <Link
       to={ROUTES.contact}
+      viewTransition
       className={styles.card}
       style={{ '--order': order } as CSSProperties}
       aria-label={t('quickOrder:card.ariaLabel', { name, price })}

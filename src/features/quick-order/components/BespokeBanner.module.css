@@ -13,7 +13,7 @@
 
 .art {
   position: absolute;
-  right: 180px;
+  inset-inline-end: 180px;
   top: 70px;
   width: 600px;
   max-width: 70vw;

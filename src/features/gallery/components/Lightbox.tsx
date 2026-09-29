@@ -22,7 +22,8 @@ interface LightboxProps {
 }
 
 export function Lightbox({ ids, selectedId, direction, navigation, onClose, onStep, onGoTo }: LightboxProps) {
-  const { t } = useTranslation(['gallery', 'catalog', 'common'])
+  const { t, i18n } = useTranslation(['gallery', 'catalog', 'common'])
+  const rtl = i18n.dir() === 'rtl'
   const dialogRef = useRef<HTMLDivElement>(null)
 
   // Focus the dialog, lock page scroll and restore both on close.
@@ -40,12 +41,13 @@ export function Lightbox({ ids, selectedId, direction, navigation, onClose, onSt
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') onClose()
-      else if (event.key === 'ArrowRight') onStep(1)
-      else if (event.key === 'ArrowLeft') onStep(-1)
+      // Arrow keys follow the page: in right-to-left layouts "forward" is the left arrow.
+      else if (event.key === 'ArrowRight') onStep(rtl ? -1 : 1)
+      else if (event.key === 'ArrowLeft') onStep(rtl ? 1 : -1)
     }
     document.addEventListener('keydown', onKeyDown)
     return () => document.removeEventListener('keydown', onKeyDown)
-  }, [onClose, onStep])
+  }, [onClose, onStep, rtl])
 
   const bouquets = getBouquets(ids)
   const index = ids.indexOf(selectedId)

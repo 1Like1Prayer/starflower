@@ -117,6 +117,43 @@ export const tokens = {
 
 export type Theme = typeof tokens
 
+type TokenOverrides = { [Group in keyof Theme]?: Partial<Record<keyof Theme[Group], string>> }
+
+/**
+ * Per-language adjustments layered over `tokens`. Hebrew swaps in Heebo plus an upright
+ * Frank Ruhl Libre accent and runs slightly larger; Russian words are longer, so display
+ * sizes come down a step.
+ */
+export const languageOverrides: Partial<Record<string, TokenOverrides>> = {
+  he: {
+    font: {
+      body: "'Heebo', 'Raleway', sans-serif",
+      accent: "'Frank Ruhl Libre', serif",
+    },
+    size: {
+      micro: '12px',
+      sm: '15px',
+      base: '16px',
+      md: '17px',
+      lg: '18px',
+      displayHero: 'clamp(58px, 8.9vw, 128px)',
+      displayPage: 'clamp(54px, 7.9vw, 116px)',
+      sectionTitle: 'clamp(44px, 5.4vw, 80px)',
+      sectionTitleSm: 'clamp(40px, 4.7vw, 68px)',
+    },
+  },
+  ru: {
+    size: {
+      displayHero: 'clamp(52px, 8vw, 116px)',
+      displayPage: 'clamp(48px, 7vw, 104px)',
+      sectionTitle: 'clamp(38px, 4.8vw, 72px)',
+      sectionTitleSm: 'clamp(34px, 4.1vw, 56px)',
+      columnTitle: 'clamp(26px, 2.5vw, 34px)',
+      cardTitle: 'clamp(24px, 2.2vw, 30px)',
+    },
+  },
+}
+
 /** Photo-placeholder colour ways. Each maps to `--gradient-tone-<name>`. */
 export const TONES = ['forest', 'sage', 'espresso', 'moss'] as const
 export type Tone = (typeof TONES)[number]

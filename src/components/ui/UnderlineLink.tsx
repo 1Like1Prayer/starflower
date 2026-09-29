@@ -15,7 +15,7 @@ interface UnderlineLinkProps {
 export function UnderlineLink({ children, to, href, className }: UnderlineLinkProps) {
   if (to) {
     return (
-      <NavLink to={to} end className={({ isActive }) => cx(styles.link, isActive && styles.active, className)}>
+      <NavLink to={to} end viewTransition className={({ isActive }) => cx(styles.link, isActive && styles.active, className)}>
         {children}
       </NavLink>
     )

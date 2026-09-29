@@ -11,13 +11,13 @@
   flex: 1 1 0;
   min-width: 0;
   overflow: hidden;
-  border-left: 1px solid var(--line-ink);
+  border-inline-start: 1px solid var(--line-ink);
   color: var(--color-ink);
   transition: flex-grow 1.05s var(--motion-ease-in-out);
 }
 
 .column:first-child {
-  border-left: 0;
+  border-inline-start: 0;
 }
 
 .open {
@@ -64,7 +64,7 @@
   }
 
   .column {
-    border-left: 0;
+    border-inline-start: 0;
     border-top: 1px solid var(--line-ink);
     transition: flex-grow 0.6s var(--motion-ease-in-out);
   }

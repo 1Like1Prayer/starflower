@@ -35,7 +35,7 @@ export function PillButton({
   if (decorative) return <span className={classes}>{content}</span>
   if (to) {
     return (
-      <Link to={to} className={classes}>
+      <Link to={to} className={classes} viewTransition>
         {content}
       </Link>
     )

@@ -38,14 +38,15 @@
 
 .quick {
   position: absolute;
-  left: 16px;
-  right: 16px;
+  inset-inline-start: 16px;
+  inset-inline-end: 16px;
   bottom: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 52px;
-  padding: 0 22px 0 26px;
+  padding: 0;
+  padding-inline: 26px 22px;
   border-radius: var(--radius-pill);
   background: var(--color-cream);
   color: var(--color-forest);
@@ -115,13 +116,13 @@
 .price::after {
   content: '';
   position: absolute;
-  left: 0;
-  right: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
   bottom: 0;
   height: 1px;
   background: currentColor;
   transform: scaleX(0);
-  transform-origin: left;
+  transform-origin: var(--origin-start);
   transition: transform 0.6s var(--motion-ease-out);
 }
 
@@ -131,11 +132,12 @@
 
 .arrow {
   display: inline-block;
+  transform: scaleX(var(--dir));
   transition: transform var(--motion-base) var(--motion-ease-out);
 }
 
 .card:hover .arrow {
-  transform: translateX(8px);
+  transform: translateX(calc(8px * var(--dir))) scaleX(var(--dir));
 }
 
 @keyframes card-in {
