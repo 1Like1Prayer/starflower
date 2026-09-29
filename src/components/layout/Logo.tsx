@@ -21,7 +21,7 @@ export function Logo({ tone = 'light', className, imageClassName, static: isStat
 
   if (isStatic) return image
   return (
-    <Link to={ROUTES.home} aria-label={t('brand.homeLabel')} className={className}>
+    <Link to={ROUTES.home} viewTransition aria-label={t('brand.homeLabel')} className={className}>
       {image}
     </Link>
   )

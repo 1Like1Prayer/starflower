@@ -62,3 +62,63 @@ em {
     transition: none !important;
   }
 }
+
+/* Page-to-page transitions (View Transitions API, enabled via <Link viewTransition>).
+   Wipe: the OLD page (which has content) is wiped away left-to-right, sliding
+   out with a shadowed edge to uncover the new page underneath. The new page
+   starts blank (its content fades up on mount), so it must not be the thing
+   that carries the motion. */
+@keyframes page-out {
+  from {
+    clip-path: inset(0 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+
+@keyframes page-in {
+  from {
+    transform: translateX(-4%);
+  }
+}
+
+@keyframes page-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 2;
+  animation: page-out 0.6s var(--motion-ease-in-out) both;
+}
+
+::view-transition-new(root) {
+  z-index: 1;
+  animation: page-in 0.6s var(--motion-ease-out) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root) {
+    animation: page-fade-out 0.15s ease both;
+  }
+
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+/* The new page mounts at the start of a view transition, but the wipe only shows a
+   frozen snapshot of it. Hold its entrance animations (curtain, fade-ups, ...) until the
+   wipe ends so they start when the page is actually revealed, not 600ms earlier. */
+:root:active-view-transition *,
+:root:active-view-transition *::before,
+:root:active-view-transition *::after {
+  animation-play-state: paused !important;
+}
