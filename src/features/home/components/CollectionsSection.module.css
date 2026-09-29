@@ -26,7 +26,7 @@
 
 .backdrop {
   position: absolute;
-  left: -120px;
+  inset-inline-start: -120px;
   top: 12%;
   width: 116%;
   max-width: none;
@@ -37,8 +37,8 @@
 
 .caption {
   position: absolute;
-  left: 36px;
-  right: 28px;
+  inset-inline-start: 36px;
+  inset-inline-end: 28px;
   bottom: 56px;
   display: flex;
   flex-direction: column;
@@ -74,8 +74,8 @@
 
 .veil {
   position: absolute;
-  left: 0;
-  right: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
   bottom: 0;
   height: 60%;
   background: linear-gradient(0deg, var(--overlay-veil-from) 0%, var(--overlay-veil-to) 100%);
@@ -83,7 +83,7 @@
 
 .pinTop {
   position: absolute;
-  left: 36px;
+  inset-inline-start: 36px;
   top: 44px;
   display: flex;
   flex-direction: column;
@@ -100,8 +100,8 @@
 
 .pinBottom {
   position: absolute;
-  left: 36px;
-  right: 36px;
+  inset-inline-start: 36px;
+  inset-inline-end: 36px;
   bottom: 52px;
   display: flex;
   flex-direction: column;
@@ -122,7 +122,7 @@
 
 .photoTag {
   position: absolute;
-  right: 28px;
+  inset-inline-end: 28px;
   top: 50px;
   font-size: var(--size-micro);
   letter-spacing: var(--tracking-caption);

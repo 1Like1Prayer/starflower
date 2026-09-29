@@ -17,6 +17,12 @@
     color var(--motion-base);
 }
 
+/* Arrows mirror in right-to-left layouts so "next" always points the way the page reads. */
+.glyph {
+  display: inline-block;
+  transform: scaleX(var(--dir));
+}
+
 .round:hover {
   background: var(--color-ink);
   color: var(--color-cream);

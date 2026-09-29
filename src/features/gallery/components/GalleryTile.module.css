@@ -6,7 +6,7 @@
   border: 0;
   background: none;
   color: var(--color-cream);
-  text-align: left;
+  text-align: start;
   cursor: pointer;
   animation: tile-in 1.15s var(--motion-ease-in-out) both;
   animation-delay: calc(var(--order) * 0.07s);
@@ -39,8 +39,8 @@
 
 .veil {
   position: absolute;
-  left: 0;
-  right: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
   bottom: 0;
   height: 55%;
   background: linear-gradient(0deg, rgba(20, 22, 18, 0.85) 0%, var(--overlay-veil-to) 100%);
@@ -53,8 +53,8 @@
 
 .caption {
   position: absolute;
-  left: 28px;
-  right: 28px;
+  inset-inline-start: 28px;
+  inset-inline-end: 28px;
   bottom: 30px;
   display: flex;
   flex-direction: column;

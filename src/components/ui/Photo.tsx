@@ -6,6 +6,7 @@ import { Caption } from './Caption'
 import styles from './Photo.module.css'
 
 export interface ArtPlacement {
+  /** Offset from the start edge (left in LTR, right in RTL). */
   left: number
   top: number
   width: number
@@ -30,7 +31,7 @@ export function Photo({ tone, art, caption, captionAt = 'bottom', className, art
       {art && (
         <BotanicalArt
           className={cx(styles.art, artClassName)}
-          style={{ left: art.left, top: art.top, width: art.width, opacity: art.opacity ?? 0.22 }}
+          style={{ insetInlineStart: art.left, top: art.top, width: art.width, opacity: art.opacity ?? 0.22 }}
         />
       )}
       {children}

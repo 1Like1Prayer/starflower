@@ -11,7 +11,7 @@
 
 .caption {
   position: absolute;
-  left: 24px;
+  inset-inline-start: 24px;
 }
 
 .bottom { bottom: 20px; }

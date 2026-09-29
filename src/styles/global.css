@@ -8,6 +8,33 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Direction helpers: 1 / -1 for mirrored transforms, plus the edge an animation grows from
+   and the two clip-path insets used by horizontal reveals. Flipped for right-to-left languages. */
+:root {
+  --dir: 1;
+  --origin-start: left;
+  --inset-x-a: 100%;
+  --inset-x-b: 0px;
+}
+
+:root[dir='rtl'] {
+  --dir: -1;
+  --origin-start: right;
+  --inset-x-a: 0px;
+  --inset-x-b: 100%;
+}
+
+/* Hebrew has no letter case and reads badly with tracking, so drop both. */
+:root[lang='he'] *:not(button) {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+:root[lang='he'] em {
+  font-style: normal;
+  font-weight: 300;
+}
+
 body {
   margin: 0;
   background: var(--color-forest);
@@ -73,13 +100,13 @@ em {
     clip-path: inset(0 0 0 0);
   }
   to {
-    clip-path: inset(0 0 0 100%);
+    clip-path: inset(0 var(--inset-x-b) 0 var(--inset-x-a));
   }
 }
 
 @keyframes page-in {
   from {
-    transform: translateX(-4%);
+    transform: translateX(calc(-4% * var(--dir)));
   }
 }
 

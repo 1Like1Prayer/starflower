@@ -25,7 +25,7 @@
 
 .backdrop {
   position: absolute;
-  left: 11%;
+  inset-inline-start: 11%;
   top: 12%;
   width: 84%;
   max-width: none;
@@ -36,8 +36,8 @@
 
 .caption {
   position: absolute;
-  left: 44px;
-  right: 36px;
+  inset-inline-start: 44px;
+  inset-inline-end: 36px;
   bottom: 56px;
   display: flex;
   flex-direction: column;
@@ -54,7 +54,7 @@
 
 .pinTop {
   position: absolute;
-  left: 44px;
+  inset-inline-start: 44px;
   top: 48px;
   display: flex;
   flex-direction: column;
@@ -71,8 +71,8 @@
 
 .pinBottom {
   position: absolute;
-  left: 44px;
-  right: 44px;
+  inset-inline-start: 44px;
+  inset-inline-end: 44px;
   bottom: 56px;
 }
 

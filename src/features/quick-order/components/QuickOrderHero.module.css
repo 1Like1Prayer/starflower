@@ -60,7 +60,7 @@
 
 .art {
   position: absolute;
-  left: -220px;
+  inset-inline-start: -220px;
   top: 220px;
   width: 1000px;
   opacity: 0.18;
@@ -75,7 +75,9 @@
 .nav {
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
 }
 
 .steps {

@@ -14,7 +14,7 @@
 
 .art {
   position: absolute;
-  left: -240px;
+  inset-inline-start: -240px;
   top: 300px;
   width: 1100px;
   opacity: 0.24;
@@ -28,7 +28,7 @@
 
 .logoLink {
   position: absolute;
-  left: var(--space-gutter);
+  inset-inline-start: var(--space-gutter);
   top: var(--space-header-top);
 }
 
@@ -39,7 +39,7 @@
 
 .caption {
   position: absolute;
-  left: var(--space-gutter);
+  inset-inline-start: var(--space-gutter);
   bottom: 44px;
 }
 
@@ -47,7 +47,8 @@
   position: relative;
   flex-grow: 1;
   min-width: 0;
-  padding: var(--space-header-top) var(--space-gutter) 60px 90px;
+  padding: var(--space-header-top) var(--space-gutter) 60px;
+  padding-inline-start: 90px;
 }
 
 .nav {
@@ -96,7 +97,7 @@
   }
 
   .content {
-    padding-left: var(--space-gutter);
+    padding-inline-start: var(--space-gutter);
   }
 
   .columns {

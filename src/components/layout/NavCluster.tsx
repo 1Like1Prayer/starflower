@@ -1,4 +1,5 @@
 import { PillButton } from '../ui'
+import { LanguageSwitcher } from './LanguageSwitcher'
 import { MainNav } from './MainNav'
 import styles from './NavCluster.module.css'
 
@@ -9,14 +10,17 @@ interface NavClusterProps {
   className?: string
 }
 
-/** Vertical page navigation next to a call-to-action pill. */
+/** Vertical page navigation next to a call-to-action pill and the language switcher. */
 export function NavCluster({ ctaLabel, ctaTo, ctaVariant = 'dark', className }: NavClusterProps) {
   return (
     <div className={className ? `${styles.cluster} ${className}` : styles.cluster}>
       <MainNav />
-      <PillButton to={ctaTo} variant={ctaVariant}>
-        {ctaLabel}
-      </PillButton>
+      <div className={styles.actions}>
+        <PillButton to={ctaTo} variant={ctaVariant}>
+          {ctaLabel}
+        </PillButton>
+        <LanguageSwitcher />
+      </div>
     </div>
   )
 }

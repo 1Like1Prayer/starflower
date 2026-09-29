@@ -33,7 +33,7 @@
 
 .artWrap {
   position: absolute;
-  left: -80px;
+  inset-inline-start: -80px;
   top: 27%;
   width: 880px;
   max-width: 160%;
@@ -47,7 +47,7 @@
 
 .caption {
   position: absolute;
-  left: 32px;
+  inset-inline-start: 32px;
   bottom: 28px;
 }
 

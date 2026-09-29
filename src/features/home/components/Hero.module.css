@@ -13,7 +13,7 @@
 
 .parallax {
   position: absolute;
-  left: 22vw;
+  inset-inline-start: 22vw;
   top: 26%;
   width: min(1500px, 105vw);
   transition: transform 1.4s var(--motion-ease-out);
@@ -53,7 +53,7 @@
   flex-direction: column;
   gap: 18px;
   position: absolute;
-  right: var(--space-gutter);
+  inset-inline-end: var(--space-gutter);
   bottom: 120px;
   width: min(360px, 100%);
 }

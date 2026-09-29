@@ -13,7 +13,7 @@
 
 .grow {
   transform: scaleX(0);
-  transform-origin: left;
+  transform-origin: var(--origin-start);
   transition: transform 1.6s var(--motion-ease-in-out);
 }
 
