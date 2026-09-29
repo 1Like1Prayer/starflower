@@ -7,6 +7,7 @@ export const contact: Translation<typeof en> = {
     eyebrow: 'Контакты',
     titleLine1: 'Создадим',
     titleLine2: 'ваш <em>момент</em>',
+    lead: 'Для индивидуальных заказов, свадеб, подписок или просто чтобы поздороваться — мы лично отвечаем на каждую заявку.',
   },
   atelier: {
     eyebrow: 'Ателье',

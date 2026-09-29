@@ -46,8 +46,26 @@
   }
 }
 
-@media (max-width: 520px) {
-  .grid {
-    grid-template-columns: 1fr;
+/* Phone: swipeable pages of 2 x 3 cards (see PagedGrid). */
+.page {
+  --page-row: 300px;
+  --page-row-gap: 16px;
+  --page-col-gap: 12px;
+}
+
+@media (max-width: 700px) {
+  .toolbar {
+    align-items: stretch;
+    gap: 16px;
+    padding: 40px var(--space-gutter) 24px;
+    border-top: 0;
+  }
+
+  .count {
+    font-size: var(--size-xs);
+  }
+
+  .shop {
+    padding-bottom: 64px;
   }
 }

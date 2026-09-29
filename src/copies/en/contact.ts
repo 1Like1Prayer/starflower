@@ -4,6 +4,7 @@ export const contact = {
     eyebrow: 'Contact us',
     titleLine1: 'Let’s create',
     titleLine2: 'your <em>moment</em>',
+    lead: 'For commissions, weddings, subscriptions or a simple hello — we reply to every request personally.',
   },
   atelier: {
     eyebrow: 'The atelier',

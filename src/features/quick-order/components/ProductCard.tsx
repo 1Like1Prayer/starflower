@@ -32,6 +32,9 @@ export function ProductCard({ bouquet, order }: ProductCardProps) {
         caption={t('common:photo.label')}
         captionAt="top"
       >
+        <span className={styles.buy} aria-hidden="true">
+          →
+        </span>
         <span className={styles.quick}>
           {t('quickOrder:card.orderNow')}
           <span className={styles.dot} />

@@ -14,6 +14,7 @@ export const home = {
     eyebrow: 'Collections',
     title: 'Choose your\nmoment',
     hint: 'Hover a collection to open it. Each one is composed to order, with stems selected on the day.',
+    hintTouch: 'Tap a collection to open it. Each one is composed to order, with stems selected on the day.',
     descriptionLabel: 'Description',
     items: {
       signature: {
@@ -45,6 +46,7 @@ export const home = {
   featured: {
     eyebrow: 'Featured',
     groupLabel: 'Featured bouquets',
+    swipeHint: 'Swipe or tap below',
     show: 'Show {{name}}',
     descriptionLabel: 'Description',
     items: {

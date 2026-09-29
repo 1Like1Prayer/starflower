@@ -86,3 +86,35 @@
     justify-content: flex-start;
   }
 }
+
+@media (max-width: 700px) {
+  .hero {
+    gap: 24px;
+    padding-bottom: 32px;
+  }
+
+  .backdrop {
+    inset-inline-end: auto;
+    inset-inline-start: 24px;
+    top: 60px;
+    width: 500px;
+    max-width: none;
+  }
+
+  .heading {
+    font-size: 52px;
+  }
+
+  .controls {
+    align-self: stretch;
+    gap: 20px;
+  }
+
+  .controls p {
+    font-size: var(--size-base);
+  }
+
+  .count {
+    font-size: var(--size-xs);
+  }
+}

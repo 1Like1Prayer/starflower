@@ -135,11 +135,85 @@
     align-items: flex-start;
   }
 
-  .stage {
-    height: auto;
+  /* Narrow columns: smaller captions so titles are not clipped. */
+  .caption {
+    inset-inline-start: 20px;
+    inset-inline-end: 12px;
   }
 
-  .stage > div:last-child > * {
-    min-height: 260px;
+  .title {
+    font-size: 22px;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Phone: rows of a tap-to-open accordion (see ExpandColumns). */
+@media (max-width: 700px) {
+  .intro {
+    gap: 16px;
+    padding: 72px var(--space-gutter) 32px;
+  }
+
+  .hint {
+    font-size: var(--size-base);
+  }
+
+  .stage {
+    --acc-closed: 104px;
+    --acc-open: 460px;
+    height: auto;
+    border-top: 0;
+  }
+
+  .backdrop {
+    inset-inline-start: -200px;
+    top: 40px;
+    width: 800px;
+    opacity: 0.16;
+  }
+
+  .caption {
+    position: static;
+    gap: 6px;
+  }
+
+  .title {
+    font-size: var(--size-h4);
+    white-space: normal;
+  }
+
+  .panelTitle {
+    font-size: 34px;
+    line-height: 1.08;
+  }
+
+  .pinTop {
+    inset-inline-start: var(--space-gutter);
+    top: 30px;
+    gap: 10px;
+  }
+
+  .pinBottom {
+    inset-inline-start: var(--space-gutter);
+    inset-inline-end: var(--space-gutter);
+    bottom: 32px;
+    gap: 12px;
+  }
+
+  .pinBottom p {
+    font-size: var(--size-base);
+  }
+
+  .explore {
+    align-self: stretch;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+
+  .photoTag {
+    inset-inline-start: var(--space-gutter);
+    inset-inline-end: auto;
+    top: 150px;
+    letter-spacing: var(--tracking-label);
   }
 }

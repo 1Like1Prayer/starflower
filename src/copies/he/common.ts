@@ -15,6 +15,8 @@ export const common: Translation<typeof en> = {
     gallery: 'גלריה',
     quickOrder: 'הזמנה מהירה',
     contact: 'צור קשר',
+    openMenu: 'פתיחת תפריט',
+    closeMenu: 'סגירת תפריט',
   },
   actions: {
     orderBouquet: 'הזמינו זר',
@@ -51,6 +53,11 @@ export const common: Translation<typeof en> = {
   },
   filters: {
     all: 'הכול',
+  },
+  pager: {
+    previous: 'העמוד הקודם',
+    next: 'העמוד הבא',
+    page: 'עמוד {{current}} מתוך {{total}}',
   },
   language: {
     label: 'שפה',

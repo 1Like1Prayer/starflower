@@ -60,3 +60,40 @@
     min-height: 320px;
   }
 }
+
+@media (max-width: 700px) {
+  .text {
+    justify-content: flex-start;
+    gap: 26px;
+    padding: 64px var(--space-gutter);
+  }
+
+  .title {
+    font-size: 40px;
+    line-height: 1.06;
+  }
+
+  .cta {
+    align-self: stretch;
+  }
+
+  .cta > * {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .photo {
+    min-height: 300px;
+  }
+
+  .artWrap {
+    inset-inline-start: -120px;
+    top: 30%;
+    width: 640px;
+  }
+
+  .caption {
+    inset-inline-start: var(--space-gutter);
+    bottom: 20px;
+  }
+}

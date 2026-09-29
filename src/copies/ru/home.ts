@@ -17,6 +17,7 @@ export const home: Translation<typeof en> = {
     eyebrow: 'Коллекции',
     title: 'Выберите\nсвой момент',
     hint: 'Наведите на коллекцию, чтобы открыть её. Каждая композиция создаётся под заказ из цветов, отобранных в тот же день.',
+    hintTouch: 'Нажмите на коллекцию, чтобы открыть её. Каждая композиция создаётся под заказ из цветов, отобранных в тот же день.',
     descriptionLabel: 'Описание',
     items: {
       signature: {
@@ -48,6 +49,7 @@ export const home: Translation<typeof en> = {
   featured: {
     eyebrow: 'Избранное',
     groupLabel: 'Избранные букеты',
+    swipeHint: 'Листайте или нажмите ниже',
     show: 'Показать «{{name}}»',
     descriptionLabel: 'Описание',
     items: {

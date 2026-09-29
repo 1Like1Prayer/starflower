@@ -1,3 +1,4 @@
+import { useRef, type TouchEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Eyebrow, Photo, PillButton, Reveal } from '../../../components/ui'
 import { ROUTES } from '../../../config/routes'
@@ -7,8 +8,22 @@ import { FEATURED } from '../data/home'
 import styles from './FeaturedSection.module.css'
 
 export function FeaturedSection() {
-  const { t } = useTranslation(['home', 'common'])
+  const { t, i18n } = useTranslation(['home', 'common'])
   const { index, select } = useAutoRotate(FEATURED.length)
+  const touchStartX = useRef<number | null>(null)
+
+  // Phones: swipe the photo to move between bouquets (direction follows the reading direction).
+  const onTouchStart = (event: TouchEvent) => {
+    touchStartX.current = event.touches[0]?.clientX ?? null
+  }
+  const onTouchEnd = (event: TouchEvent) => {
+    const start = touchStartX.current
+    const end = event.changedTouches[0]?.clientX
+    touchStartX.current = null
+    if (start == null || end == null || Math.abs(end - start) < 40) return
+    const forward = i18n.dir() === 'rtl' ? end > start : end < start
+    select((index + (forward ? 1 : FEATURED.length - 1)) % FEATURED.length)
+  }
 
   return (
     <section className={styles.section}>
@@ -24,6 +39,7 @@ export function FeaturedSection() {
       </Reveal>
 
       <div className={styles.body}>
+        <div className={styles.swipe} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
         <Reveal variant="clip" className={cx(styles.media, styles.stack)}>
           {FEATURED.map((item, i) => (
             <div key={item.id} className={cx(styles.layer, styles.image, i === index && styles.active)} aria-hidden="true">
@@ -36,6 +52,16 @@ export function FeaturedSection() {
             </div>
           ))}
         </Reveal>
+        </div>
+
+        <div className={styles.progress}>
+          <div className={styles.dots} aria-hidden="true">
+            {FEATURED.map((item, i) => (
+              <span key={item.id} className={cx(i === index && styles.dotActive)} />
+            ))}
+          </div>
+          <span>{t('featured.swipeHint')}</span>
+        </div>
 
         <div className={cx(styles.details, styles.stack)}>
           {FEATURED.map((item, i) => (

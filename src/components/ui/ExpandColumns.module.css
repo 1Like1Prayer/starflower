@@ -58,14 +58,116 @@
   clip-path: inset(0 0 0 0);
 }
 
-@media (max-width: 900px) {
+/* Phones: vertical accordion. Row heights come from --acc-closed / --acc-open on the section. */
+.head,
+.plus,
+.close {
+  display: none;
+}
+
+@media (max-width: 700px) {
   .row {
     flex-direction: column;
+    height: auto;
   }
 
   .column {
+    flex: none;
+    height: var(--acc-closed, 104px);
     border-inline-start: 0;
     border-top: 1px solid var(--line-ink);
-    transition: flex-grow 0.6s var(--motion-ease-in-out);
+    transition: height 0.9s var(--motion-ease-in-out);
+  }
+
+  .column:first-child {
+    border-top: 1px solid var(--line-ink);
+  }
+
+  .open {
+    height: var(--acc-open, 460px);
+  }
+
+  .head {
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    height: var(--acc-closed, 104px);
+    padding: 0 var(--space-gutter);
+    border: 0;
+    background: transparent;
+    color: var(--color-ink);
+    font-family: inherit;
+    text-align: start;
+    cursor: pointer;
+  }
+
+  .headCaption {
+    display: block;
+    min-width: 0;
+  }
+
+  .plus {
+    position: relative;
+    display: block;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border: 1px solid var(--line-ink-strong);
+    border-radius: var(--radius-round);
+  }
+
+  .plus::before,
+  .plus::after {
+    content: '';
+    position: absolute;
+    inset-inline-start: 14px;
+    top: 21px;
+    width: 14px;
+    height: 1px;
+    background: var(--color-ink);
+  }
+
+  .plus::after {
+    transform: rotate(90deg);
+  }
+
+  .panel {
+    inset: auto;
+    inset-inline: 0;
+    top: 0;
+    height: var(--acc-open, 460px);
+  }
+
+  .close {
+    position: absolute;
+    inset-inline-end: var(--space-gutter);
+    top: 30px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--line-cream-strong);
+    border-radius: var(--radius-round);
+    background: transparent;
+    color: var(--color-cream);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+      opacity 0.7s ease 0.35s,
+      transform 0.9s var(--motion-ease-out) 0.35s;
+  }
+
+  .open .close {
+    opacity: 1;
+    transform: none;
   }
 }

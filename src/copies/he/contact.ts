@@ -7,6 +7,7 @@ export const contact: Translation<typeof en> = {
     eyebrow: 'צור קשר',
     titleLine1: 'בואו ניצור',
     titleLine2: 'את <em>הרגע</em> שלכם',
+    lead: 'להזמנות אישיות, חתונות, מנויים או סתם כדי להגיד שלום — אנחנו עונים אישית לכל פנייה.',
   },
   atelier: {
     eyebrow: 'הסטודיו',

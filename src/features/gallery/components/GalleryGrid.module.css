@@ -14,8 +14,15 @@
   }
 }
 
-@media (max-width: 560px) {
-  .grid {
-    grid-template-columns: 1fr;
+/* Phone: swipeable pages of 2 x 3 tiles (see PagedGrid). */
+.page {
+  --page-row: 230px;
+  --page-row-gap: 10px;
+  --page-col-gap: 10px;
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding-bottom: 64px;
   }
 }

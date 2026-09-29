@@ -12,6 +12,8 @@ export const common = {
     gallery: 'Gallery',
     quickOrder: 'Quick Order',
     contact: 'Contacts',
+    openMenu: 'Open menu',
+    closeMenu: 'Close menu',
   },
   actions: {
     orderBouquet: 'Order a bouquet',
@@ -48,6 +50,11 @@ export const common = {
   },
   filters: {
     all: 'All',
+  },
+  pager: {
+    previous: 'Previous page',
+    next: 'Next page',
+    page: 'Page {{current}} of {{total}}',
   },
   language: {
     label: 'Language',
