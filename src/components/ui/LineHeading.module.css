@@ -1,0 +1,16 @@
+.heading {
+  margin: 0;
+  font-weight: var(--weight-light);
+  text-transform: uppercase;
+}
+
+.line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+}
+
+.inner {
+  display: block;
+  animation: line-up 1.3s var(--motion-ease-out) both;
+}

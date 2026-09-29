@@ -1,0 +1,38 @@
+.layout {
+  display: flex;
+  min-height: 1400px;
+}
+
+.content {
+  flex-grow: 1;
+  min-width: 0;
+  padding: var(--space-header-top) var(--space-gutter) 80px clamp(24px, 7vw, 100px);
+}
+
+.nav {
+  justify-content: flex-end;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: clamp(64px, 8vw, 110px);
+}
+
+.title {
+  font-size: clamp(52px, 7.2vw, 104px);
+  line-height: 1;
+  letter-spacing: var(--tracking-snug);
+}
+
+.formArea {
+  margin-top: 64px;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column;
+    min-height: 0;
+  }
+}

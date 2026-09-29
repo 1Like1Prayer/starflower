@@ -1,0 +1,148 @@
+.section {
+  padding: var(--space-section) var(--space-gutter) 100px;
+  background: var(--color-sand);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Layers of the same slot are stacked in one grid cell and cross-fade. */
+.stack {
+  display: grid;
+}
+
+.layer {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(22px);
+  pointer-events: none;
+  transition:
+    opacity 0.8s ease,
+    transform 1s var(--motion-ease-out);
+}
+
+.active {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+  transition-delay: 0.25s;
+}
+
+.name {
+  font-size: var(--size-display-page);
+  font-weight: var(--weight-light);
+  line-height: 1.05;
+  letter-spacing: var(--tracking-snug);
+  text-transform: uppercase;
+}
+
+.body {
+  display: flex;
+  gap: 48px;
+  align-items: flex-end;
+  margin-top: 28px;
+}
+
+.media {
+  position: relative;
+  width: min(760px, 52%);
+  aspect-ratio: 760 / 600;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.image {
+  transform: scale(1.06);
+  transition:
+    opacity 1.1s ease,
+    transform 1.8s var(--motion-ease-out);
+}
+
+.image.active {
+  transform: none;
+  transition-delay: 0s;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+}
+
+.details {
+  flex-grow: 1;
+  align-self: flex-end;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-self: end;
+}
+
+.copy p {
+  max-width: 330px;
+  font-size: var(--size-lg);
+  line-height: 1.65;
+  font-weight: var(--weight-light);
+}
+
+.copy .stems {
+  color: var(--color-ink-muted);
+}
+
+.price {
+  margin-top: 4px;
+  font-size: var(--size-base);
+}
+
+.cta {
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.thumb {
+  width: 92px;
+  height: 118px;
+  padding: 0;
+  border: 1px solid transparent;
+  opacity: 0.5;
+  cursor: pointer;
+  transition:
+    opacity var(--motion-base),
+    border-color var(--motion-base);
+}
+
+.thumb:hover {
+  opacity: 0.85;
+}
+
+.thumbActive {
+  opacity: 1;
+  border-color: var(--color-ink);
+}
+
+@media (max-width: 900px) {
+  .body {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .media {
+    width: 100%;
+  }
+
+  .thumbs {
+    flex-direction: row;
+  }
+}

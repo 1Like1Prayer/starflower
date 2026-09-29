@@ -1,0 +1,96 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 48px;
+  min-height: min(960px, max(720px, 100svh));
+  padding: clamp(150px, 26vh, 250px) var(--space-gutter) 56px;
+  overflow: hidden;
+  background: var(--gradient-hero);
+  color: var(--color-cream);
+}
+
+.parallax {
+  position: absolute;
+  left: 22vw;
+  top: 26%;
+  width: min(1500px, 105vw);
+  transition: transform 1.4s var(--motion-ease-out);
+}
+
+.art {
+  width: 100%;
+  height: auto;
+  opacity: 0.22;
+  animation:
+    clip-right 3.2s var(--motion-ease-draw) 1.4s both,
+    ken-burns 18s ease-in-out infinite alternate;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 48px;
+}
+
+.title {
+  font-size: var(--size-display-hero);
+  line-height: 1.02;
+  letter-spacing: var(--tracking-tight);
+}
+
+.accent {
+  font-size: 1.12em;
+  font-weight: var(--weight-light);
+}
+
+.who {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: absolute;
+  right: var(--space-gutter);
+  bottom: 120px;
+  width: min(360px, 100%);
+}
+
+.whoLabel {
+  font-size: var(--size-xl);
+  font-weight: var(--weight-light);
+}
+
+.who p {
+  font-size: var(--size-base);
+  line-height: 1.65;
+  font-weight: var(--weight-light);
+  color: var(--color-mist);
+}
+
+.footer {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  font-size: var(--size-sm);
+  font-weight: var(--weight-light);
+  letter-spacing: var(--tracking-wide);
+}
+
+.location {
+  font-size: 12px;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-stone);
+}
+
+@media (max-width: 900px) {
+  .who {
+    position: static;
+    margin-top: 32px;
+  }
+}

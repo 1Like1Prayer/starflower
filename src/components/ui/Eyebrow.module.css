@@ -1,0 +1,8 @@
+.eyebrow {
+  font-size: var(--size-base);
+}
+
+.muted { color: var(--color-ink-muted); }
+.light { color: var(--color-mist); }
+.stone { color: var(--color-stone); }
+.inherit { color: inherit; }

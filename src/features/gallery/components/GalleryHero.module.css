@@ -1,0 +1,88 @@
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 60px;
+  padding: clamp(64px, 8vw, 110px) var(--space-gutter) 56px;
+  overflow: hidden;
+}
+
+.backdrop {
+  position: absolute;
+  right: -120px;
+  top: -40px;
+  width: 760px;
+  max-width: 80vw;
+  height: auto;
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.heading {
+  font-size: var(--size-display-page);
+  line-height: 1;
+  letter-spacing: var(--tracking-snug);
+}
+
+.controls {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 22px;
+}
+
+.controls p {
+  max-width: 380px;
+  font-size: var(--size-md);
+  line-height: 1.7;
+  font-weight: var(--weight-light);
+  color: var(--color-ink-muted);
+  text-align: right;
+}
+
+.controls > div {
+  justify-content: flex-end;
+}
+
+.count {
+  display: block;
+  font-size: var(--size-sm);
+  color: var(--color-ink-muted);
+  animation: count-in 0.8s var(--motion-ease-out) both;
+}
+
+.leaving {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    opacity 0.4s,
+    transform 0.4s;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .controls {
+    align-items: flex-start;
+  }
+
+  .controls p {
+    text-align: left;
+  }
+
+  .controls > div {
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,60 @@
+.sent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 48px;
+  min-height: 520px;
+  padding: clamp(28px, 4.4vw, 64px);
+  overflow: hidden;
+  background: var(--color-sage);
+  color: var(--color-forest);
+  animation: clip-in 1.1s var(--motion-ease-in-out) both;
+}
+
+.art {
+  position: absolute;
+  right: -80px;
+  bottom: 40px;
+  width: 620px;
+  max-width: 80%;
+  height: auto;
+  opacity: 0.35;
+}
+
+.eyebrow,
+.message {
+  position: relative;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.message h2 {
+  font-size: var(--size-section-title-sm);
+  font-weight: var(--weight-light);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.message p {
+  max-width: 460px;
+  font-size: var(--size-lg);
+  line-height: 1.7;
+  font-weight: var(--weight-regular);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+@keyframes clip-in {
+  from { clip-path: inset(100% 0 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}

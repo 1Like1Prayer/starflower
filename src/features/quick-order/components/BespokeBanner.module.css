@@ -1,0 +1,48 @@
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 380px;
+  padding: 64px var(--space-gutter);
+  overflow: hidden;
+  background: var(--color-sage);
+  color: var(--color-forest);
+}
+
+.art {
+  position: absolute;
+  right: 180px;
+  top: 70px;
+  width: 600px;
+  max-width: 70vw;
+  height: auto;
+  opacity: 0.5;
+}
+
+.text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.text h2 {
+  font-size: var(--size-section-title-sm);
+  font-weight: var(--weight-light);
+  line-height: 1.05;
+  text-transform: uppercase;
+  white-space: pre-line;
+}
+
+.cta {
+  position: relative;
+}
+
+@media (max-width: 700px) {
+  .banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

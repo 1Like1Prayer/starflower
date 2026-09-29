@@ -1,0 +1,19 @@
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-size: var(--size-section-title);
+  font-weight: var(--weight-light);
+  line-height: 1;
+  letter-spacing: var(--tracking-snug);
+  text-transform: uppercase;
+  white-space: pre-line;
+}
+
+.md {
+  font-size: clamp(40px, 5vw, 72px);
+  letter-spacing: var(--tracking-normal);
+}

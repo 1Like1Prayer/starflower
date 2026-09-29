@@ -1,0 +1,99 @@
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 48px;
+  padding: 110px var(--space-gutter) 60px;
+  border-top: 1px solid var(--line-ink);
+}
+
+.text {
+  max-width: 360px;
+  font-size: var(--size-md);
+  line-height: 1.7;
+  font-weight: var(--weight-light);
+  color: var(--color-ink-muted);
+}
+
+.stage {
+  position: relative;
+  height: clamp(480px, 44vw, 640px);
+  overflow: hidden;
+  border-top: 1px solid var(--line-ink);
+  border-bottom: 1px solid var(--line-ink);
+}
+
+.backdrop {
+  position: absolute;
+  left: 11%;
+  top: 12%;
+  width: 84%;
+  max-width: none;
+  height: auto;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.caption {
+  position: absolute;
+  left: 44px;
+  right: 36px;
+  bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.title {
+  font-size: var(--size-column-title);
+  font-weight: var(--weight-light);
+  line-height: 1.12;
+  text-transform: uppercase;
+  white-space: pre-line;
+}
+
+.pinTop {
+  position: absolute;
+  left: 44px;
+  top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.panelTitle {
+  font-size: clamp(30px, 3.1vw, 44px);
+  font-weight: var(--weight-light);
+  line-height: 1.1;
+  text-transform: uppercase;
+  white-space: pre-line;
+}
+
+.pinBottom {
+  position: absolute;
+  left: 44px;
+  right: 44px;
+  bottom: 56px;
+}
+
+.pinBottom p {
+  max-width: 420px;
+  font-size: var(--size-lg);
+  line-height: 1.7;
+  font-weight: var(--weight-regular);
+}
+
+@media (max-width: 900px) {
+  .intro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stage {
+    height: auto;
+  }
+
+  .stage > div:last-child > * {
+    min-height: 260px;
+  }
+}

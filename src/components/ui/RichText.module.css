@@ -1,0 +1,7 @@
+.accent {
+  font-family: var(--font-accent);
+  font-size: 1.1em;
+  font-style: italic;
+  letter-spacing: var(--tracking-normal);
+  text-transform: none;
+}

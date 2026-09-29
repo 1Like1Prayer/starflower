@@ -1,0 +1,47 @@
+export const contact = {
+  cta: 'View the gallery',
+  hero: {
+    eyebrow: 'Contact us',
+    titleLine1: 'Let’s create',
+    titleLine2: 'your <em>moment</em>',
+  },
+  atelier: {
+    eyebrow: 'The atelier',
+    address: 'Address',
+    addressValue: '[ADDRESS], [CITY]',
+    hours: 'Hours',
+    hoursValue: '[OPENING HOURS]',
+    telephone: 'Telephone',
+    telephoneValue: '[PHONE]',
+    email: 'Email',
+    emailValue: '[EMAIL]',
+  },
+  form: {
+    occasionGroup: 'Occasion',
+    occasionHeading: 'The occasion',
+    occasions: {
+      gift: { label: 'A gift', summary: 'gift' },
+      wedding: { label: 'Wedding', summary: 'wedding' },
+      event: { label: 'Event', summary: 'event' },
+      subscription: { label: 'Subscription', summary: 'subscription' },
+      sympathy: { label: 'Sympathy', summary: 'sympathy' },
+    },
+    fields: {
+      name: { label: 'Your name', placeholder: 'Full name' },
+      email: { label: 'Email', placeholder: 'you@example.com' },
+      phone: { label: 'Telephone', placeholder: 'Optional' },
+      date: { label: 'Date needed' },
+      message: { label: 'Tell us about it', placeholder: 'Who is it for, and how should it feel?' },
+    },
+    reply: 'We reply personally within [RESPONSE TIME].',
+    submit: 'Send request',
+  },
+  sent: {
+    eyebrow: 'Request received',
+    title: 'Thank you',
+    titleNamed: 'Thank you, {{name}}',
+    body: 'A member of our atelier will be in touch personally to begin composing your {{occasion}} piece.',
+    explore: 'Explore the gallery',
+    another: 'New request',
+  },
+} as const

@@ -1,0 +1,6 @@
+.caption {
+  font-size: var(--size-micro);
+  letter-spacing: var(--tracking-caption);
+  text-transform: uppercase;
+  color: var(--color-haze);
+}

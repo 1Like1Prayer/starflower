@@ -1,0 +1,32 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 44px;
+  min-height: clamp(520px, 53vw, 760px);
+  padding: 80px var(--space-gutter);
+  overflow: hidden;
+  background: var(--color-sage);
+  color: var(--color-forest);
+  text-align: center;
+}
+
+.art {
+  width: min(520px, 70vw);
+  height: auto;
+  opacity: 0.9;
+}
+
+.quote {
+  max-width: 1060px;
+  font-size: var(--size-quote);
+  font-weight: var(--weight-light);
+  line-height: 1.18;
+  letter-spacing: var(--tracking-snug);
+  text-wrap: balance;
+}
+
+.accent {
+  color: var(--color-cream);
+}

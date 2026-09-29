@@ -1,0 +1,125 @@
+.tile {
+  display: block;
+  width: 100%;
+  height: clamp(380px, 37.5vw, 540px);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-cream);
+  text-align: left;
+  cursor: pointer;
+  animation: tile-in 1.15s var(--motion-ease-in-out) both;
+  animation-delay: calc(var(--order) * 0.07s);
+}
+
+:global([data-leaving='true']) .tile {
+  animation: tile-out 0.55s var(--motion-ease-in-out) both;
+  animation-delay: calc(var(--order) % 3 * 0.04s);
+  pointer-events: none;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+}
+
+.art {
+  transition:
+    transform 1.8s var(--motion-ease-out),
+    opacity 1s;
+  animation: art-in 2s var(--motion-ease-out) backwards;
+  animation-delay: calc(var(--order) * 0.07s);
+}
+
+.tile:hover .art,
+.tile:focus-visible .art {
+  transform: scale(1.12);
+  opacity: 0.34 !important;
+}
+
+.veil {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 55%;
+  background: linear-gradient(0deg, rgba(20, 22, 18, 0.85) 0%, var(--overlay-veil-to) 100%);
+  transition: height 0.9s var(--motion-ease-out);
+}
+
+.tile:hover .veil {
+  height: 80%;
+}
+
+.caption {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: caption-in 1s var(--motion-ease-out) backwards;
+  animation-delay: calc(var(--order) * 0.07s);
+}
+
+.name {
+  font-size: var(--size-card-title);
+  font-weight: var(--weight-light);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.stems {
+  font-size: var(--size-sm);
+  color: var(--color-mist);
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.6s,
+    transform 0.8s var(--motion-ease-out);
+}
+
+.tile:hover .stems,
+.tile:focus-visible .stems {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes tile-in {
+  from {
+    clip-path: inset(100% 0 0 0);
+    transform: translateY(60px);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: none;
+  }
+}
+
+@keyframes tile-out {
+  from {
+    clip-path: inset(0 0 0 0);
+    transform: none;
+    opacity: 1;
+  }
+  to {
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(-40px);
+    opacity: 0.3;
+  }
+}
+
+@keyframes art-in {
+  from {
+    transform: scale(1.35) rotate(-4deg);
+    opacity: 0;
+  }
+}
+
+@keyframes caption-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+}

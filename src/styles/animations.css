@@ -1,0 +1,40 @@
+/* Shared keyframes + utility classes used across features. */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes line-up {
+  from { transform: translateY(112%); }
+  to { transform: none; }
+}
+
+@keyframes clip-right {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes clip-down {
+  from { clip-path: inset(0 0 100% 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes ken-burns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.09) translate(-1.8%, -1%); }
+}
+
+@keyframes count-in {
+  from { opacity: 0; transform: translateY(12px); }
+}
+
+/* Staggered entrance for text blocks: <p class="fade" style="--delay: 1.2s"> */
+.fade {
+  animation: fade-up var(--motion-reveal) ease both;
+  animation-delay: var(--delay, 0s);
+}
+
+.ken-burns {
+  animation: ken-burns 20s ease-in-out infinite alternate;
+}

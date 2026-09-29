@@ -1,0 +1,12 @@
+.pin {
+  opacity: 0;
+  transform: translateY(34px);
+  transition:
+    opacity 0.8s ease 0.4s,
+    transform 1s var(--motion-ease-out) 0.4s;
+}
+
+:global([data-open='true']) .pin {
+  opacity: 1;
+  transform: none;
+}

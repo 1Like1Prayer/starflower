@@ -1,0 +1,6 @@
+.wrap {
+  position: relative;
+  overflow: hidden;
+  transition: height 1.15s var(--motion-ease-smooth);
+  will-change: height;
+}

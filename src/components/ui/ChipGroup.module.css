@@ -1,0 +1,35 @@
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  height: 46px;
+  padding: 0 24px;
+  border: 1px solid var(--line-ink);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-ink);
+  font-size: var(--size-sm);
+  cursor: pointer;
+  transition:
+    background var(--motion-base),
+    color var(--motion-base),
+    border-color var(--motion-base),
+    transform var(--motion-fast);
+}
+
+.chip:hover {
+  border-color: var(--color-ink);
+}
+
+.chip:active {
+  transform: scale(0.96);
+}
+
+.active {
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-cream);
+}

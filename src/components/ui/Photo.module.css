@@ -1,0 +1,18 @@
+.photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.art {
+  position: absolute;
+  height: auto;
+  max-width: none;
+}
+
+.caption {
+  position: absolute;
+  left: 24px;
+}
+
+.bottom { bottom: 20px; }
+.top { top: 20px; }
