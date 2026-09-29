@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
 import { useTranslation } from 'react-i18next'
-import { LanguageSwitcher, Logo, MainNav } from '../../../components/layout'
+import { LanguageSwitcher, Logo, MainNav, MobileMenu } from '../../../components/layout'
 import { BotanicalArt, Eyebrow, LineHeading } from '../../../components/ui'
 import { padNumber } from '../../../utils/format'
 import styles from './QuickOrderHero.module.css'
@@ -12,7 +12,10 @@ export function QuickOrderHero() {
   return (
     <section className={styles.hero}>
       <div className={styles.intro}>
-        <Logo tone="dark" className={styles.logoLink} imageClassName={styles.logo} />
+        <div className={styles.top}>
+          <Logo tone="dark" className={styles.logoLink} imageClassName={styles.logo} />
+          <MobileMenu />
+        </div>
         <div className={styles.copy}>
           <span className="fade" style={{ '--delay': '1.1s' } as CSSProperties}>
             <Eyebrow>{t('hero.eyebrow')}</Eyebrow>

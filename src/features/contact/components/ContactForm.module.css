@@ -27,12 +27,28 @@
 }
 
 @media (max-width: 700px) {
+  .form {
+    gap: 30px;
+  }
+
+  .occasion {
+    gap: 12px;
+  }
+
   .grid {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .footer {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 18px;
+    font-size: var(--size-xs);
+  }
+
+  .footer > :last-child {
+    width: 100%;
+    justify-content: space-between;
   }
 }

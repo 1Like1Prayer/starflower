@@ -54,6 +54,42 @@
   margin-top: 8px;
 }
 
+@media (max-width: 700px) {
+  .sent {
+    gap: 32px;
+    min-height: 620px;
+    padding: 40px 28px;
+  }
+
+  .art {
+    inset-inline-end: -120px;
+    bottom: 260px;
+    width: 460px;
+  }
+
+  .message {
+    gap: 18px;
+  }
+
+  .message h2 {
+    font-size: 40px;
+  }
+
+  .message p {
+    font-size: var(--size-md);
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .actions > * {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
 @keyframes clip-in {
   from { clip-path: inset(100% 0 0 0); }
   to { clip-path: inset(0 0 0 0); }

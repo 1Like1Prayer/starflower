@@ -123,3 +123,24 @@
     transform: translateY(28px);
   }
 }
+
+@media (max-width: 700px) {
+  .tile {
+    height: 100%;
+  }
+
+  .caption {
+    inset-inline-start: 14px;
+    inset-inline-end: 14px;
+    bottom: 14px;
+    gap: 6px;
+  }
+
+  .name {
+    font-size: var(--size-md);
+  }
+
+  .stems {
+    display: none;
+  }
+}

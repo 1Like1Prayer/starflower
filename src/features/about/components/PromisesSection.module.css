@@ -44,6 +44,10 @@
   gap: 14px;
 }
 
+.numeralCompact {
+  display: none;
+}
+
 .title {
   font-size: var(--size-column-title);
   font-weight: var(--weight-light);
@@ -89,11 +93,81 @@
     align-items: flex-start;
   }
 
-  .stage {
-    height: auto;
+  .caption {
+    inset-inline-start: 24px;
+    inset-inline-end: 12px;
   }
 
-  .stage > div:last-child > * {
-    min-height: 260px;
+  .title {
+    font-size: 24px;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Phone: accordion rows (see ExpandColumns). */
+@media (max-width: 700px) {
+  .intro {
+    gap: 16px;
+    padding: 64px var(--space-gutter) 32px;
+  }
+
+  .text {
+    font-size: var(--size-base);
+  }
+
+  .stage {
+    --acc-closed: 96px;
+    --acc-open: 340px;
+    height: auto;
+    border-top: 0;
+  }
+
+  .backdrop {
+    display: none;
+  }
+
+  .caption {
+    position: static;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .numeral {
+    display: none;
+  }
+
+  .numeralCompact {
+    display: block;
+    flex-shrink: 0;
+    font-size: var(--size-sm);
+    color: var(--color-ink-muted);
+  }
+
+  .title {
+    font-size: var(--size-h4);
+    white-space: normal;
+  }
+
+  .pinTop {
+    inset-inline-start: var(--space-gutter);
+    top: 32px;
+    gap: 10px;
+  }
+
+  .panelTitle {
+    font-size: 34px;
+    line-height: 1.08;
+  }
+
+  .pinBottom {
+    inset-inline-start: var(--space-gutter);
+    inset-inline-end: var(--space-gutter);
+    bottom: 32px;
+  }
+
+  .pinBottom p {
+    max-width: none;
+    font-size: var(--size-md);
   }
 }

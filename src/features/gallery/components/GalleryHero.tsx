@@ -34,6 +34,7 @@ export function GalleryHero({ highlighted, filter, leaving, generation, visibleC
       <div className={`fade ${styles.controls}`} style={{ '--delay': '1.4s' } as CSSProperties}>
         <p>{t('hero.intro')}</p>
         <ChipGroup
+          scrollOnPhone
           label={t('hero.filterLabel')}
           options={GALLERY_FILTERS.map((value) => ({ value, label: filterLabel(value) }))}
           value={highlighted}

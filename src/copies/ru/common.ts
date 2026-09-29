@@ -15,6 +15,8 @@ export const common: Translation<typeof en> = {
     gallery: 'Галерея',
     quickOrder: 'Быстрый заказ',
     contact: 'Контакты',
+    openMenu: 'Открыть меню',
+    closeMenu: 'Закрыть меню',
   },
   actions: {
     orderBouquet: 'Заказать букет',
@@ -51,6 +53,11 @@ export const common: Translation<typeof en> = {
   },
   filters: {
     all: 'Все',
+  },
+  pager: {
+    previous: 'Предыдущая страница',
+    next: 'Следующая страница',
+    page: 'Страница {{current}} из {{total}}',
   },
   language: {
     label: 'Язык',

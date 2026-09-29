@@ -10,7 +10,19 @@
   padding-inline-start: clamp(24px, 7vw, 100px);
 }
 
-.nav {
+.hero {
+  display: contents;
+}
+
+/* Phone-only pieces of the hero. */
+.heroArt,
+.mobileLogo,
+.lead {
+  display: none;
+}
+
+.top {
+  display: flex;
   justify-content: flex-end;
 }
 
@@ -35,5 +47,81 @@
   .layout {
     flex-direction: column;
     min-height: 0;
+  }
+}
+
+/* Phone: dark hero, then the form, then the dark atelier panel (see ContactInfoPanel). */
+@media (max-width: 700px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .hero {
+    position: relative;
+    display: block;
+    order: 1;
+    padding: 20px var(--space-gutter) 48px;
+    overflow: hidden;
+    background: var(--gradient-tone-forest);
+    color: var(--color-cream);
+  }
+
+  .heroArt {
+    position: absolute;
+    inset-inline-start: -180px;
+    top: 250px;
+    display: block;
+    width: 760px;
+    max-width: none;
+    height: auto;
+    opacity: 0.22;
+    pointer-events: none;
+  }
+
+  .top {
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mobileLogo {
+    display: block;
+  }
+
+  .mobileLogoImage {
+    display: block;
+    height: 34px;
+    width: auto;
+  }
+
+  .intro {
+    position: relative;
+    gap: 16px;
+    margin-top: 76px;
+  }
+
+  .hero .eyebrow > span {
+    color: var(--color-mist);
+  }
+
+  .title {
+    font-size: 46px;
+  }
+
+  .lead {
+    display: block;
+    margin-top: 4px;
+    font-size: var(--size-base);
+    line-height: 1.65;
+    font-weight: var(--weight-light);
+    color: var(--color-mist);
+  }
+
+  .formArea {
+    order: 2;
+    margin-top: 0;
+    padding: 48px var(--space-gutter) 64px;
   }
 }

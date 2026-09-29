@@ -132,6 +132,14 @@
   border-color: var(--color-ink);
 }
 
+.swipe {
+  display: contents;
+}
+
+.progress {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .body {
     flex-direction: column;
@@ -144,5 +152,102 @@
 
   .thumbs {
     flex-direction: row;
+  }
+}
+
+/* Phone: photo, progress dashes, thumbnail row, then the description. */
+@media (max-width: 700px) {
+  .section {
+    padding: 72px var(--space-gutter);
+  }
+
+  .head {
+    gap: 18px;
+  }
+
+  .head .stack {
+    min-height: 96px;
+  }
+
+  .name {
+    font-size: 44px;
+    letter-spacing: var(--tracking-normal);
+  }
+
+  .body {
+    gap: 18px;
+    margin-top: 0;
+  }
+
+  .media {
+    order: 1;
+    aspect-ratio: 342 / 420;
+    touch-action: pan-y;
+  }
+
+  .progress {
+    order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--size-xs);
+    color: var(--color-ink-muted);
+  }
+
+  .dots {
+    display: flex;
+    gap: 6px;
+  }
+
+  .dots span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: rgba(58, 50, 45, 0.25);
+    transition:
+      background var(--motion-base),
+      width var(--motion-base);
+  }
+
+  .dots .dotActive {
+    width: 36px;
+    background: var(--color-ink);
+  }
+
+  .thumbs {
+    order: 3;
+    gap: 8px;
+  }
+
+  .thumb {
+    flex: 1 1 0;
+    width: auto;
+    height: 96px;
+  }
+
+  .details {
+    order: 4;
+    align-self: stretch;
+    margin-top: 10px;
+  }
+
+  .copy {
+    gap: 14px;
+  }
+
+  .copy p {
+    max-width: none;
+    font-size: var(--size-md);
+    line-height: 1.65;
+  }
+
+  .copy .stems {
+    font-size: var(--size-base);
+  }
+
+  .cta {
+    align-self: stretch;
+    justify-content: space-between;
+    margin-top: 6px;
   }
 }

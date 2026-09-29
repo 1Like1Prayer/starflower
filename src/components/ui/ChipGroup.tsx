@@ -12,12 +12,14 @@ interface ChipGroupProps<T extends string> {
   options: readonly ChipOption<T>[]
   value: T
   onChange: (value: T) => void
+  /** Phones: one horizontally scrolling row instead of wrapping. */
+  scrollOnPhone?: boolean
   className?: string
 }
 
-export function ChipGroup<T extends string>({ label, options, value, onChange, className }: ChipGroupProps<T>) {
+export function ChipGroup<T extends string>({ label, options, value, onChange, scrollOnPhone, className }: ChipGroupProps<T>) {
   return (
-    <div role="group" aria-label={label} className={cx(styles.group, className)}>
+    <div role="group" aria-label={label} className={cx(styles.group, scrollOnPhone && styles.scroll, className)}>
       {options.map((option) => (
         <button
           key={option.value}

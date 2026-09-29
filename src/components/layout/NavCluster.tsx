@@ -1,6 +1,7 @@
 import { PillButton } from '../ui'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { MainNav } from './MainNav'
+import { MobileMenu } from './MobileMenu'
 import styles from './NavCluster.module.css'
 
 interface NavClusterProps {
@@ -14,13 +15,14 @@ interface NavClusterProps {
 export function NavCluster({ ctaLabel, ctaTo, ctaVariant = 'dark', className }: NavClusterProps) {
   return (
     <div className={className ? `${styles.cluster} ${className}` : styles.cluster}>
-      <MainNav />
-      <div className={styles.actions}>
+      <MainNav className={styles.desktopOnly} />
+      <div className={`${styles.actions} ${styles.desktopOnly}`}>
         <PillButton to={ctaTo} variant={ctaVariant}>
           {ctaLabel}
         </PillButton>
         <LanguageSwitcher />
       </div>
+      <MobileMenu />
     </div>
   )
 }

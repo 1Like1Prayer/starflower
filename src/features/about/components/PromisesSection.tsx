@@ -24,7 +24,10 @@ export function PromisesSection() {
           grow={1.6}
           renderCaption={(id) => (
             <div className={styles.caption}>
-              <Eyebrow>{t(`promises.items.${id}.numeral`)}</Eyebrow>
+              <Eyebrow className={styles.numeral}>{t(`promises.items.${id}.numeral`)}</Eyebrow>
+              <span className={styles.numeralCompact} aria-hidden="true">
+                {t(`promises.items.${id}.numeral`)}.
+              </span>
               <span className={styles.title}>{t(`promises.items.${id}.title`)}</span>
             </div>
           )}

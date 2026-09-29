@@ -33,3 +33,30 @@
   background: var(--color-ink);
   color: var(--color-cream);
 }
+
+@media (max-width: 700px) {
+  .group {
+    gap: 8px;
+  }
+
+  .chip {
+    height: 44px;
+    padding: 0 20px;
+  }
+
+  .scroll {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-inline: calc(var(--space-gutter) * -1);
+    padding: 0 var(--space-gutter) 4px;
+    scrollbar-width: none;
+  }
+
+  .scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scroll .chip {
+    flex-shrink: 0;
+  }
+}

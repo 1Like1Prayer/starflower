@@ -105,3 +105,63 @@
     gap: 24px;
   }
 }
+
+/* Phone: photo block on top with the logo and burger over it, then the story. */
+@media (max-width: 700px) {
+  .hero {
+    position: relative;
+    min-height: 0;
+  }
+
+  .panel {
+    height: 440px;
+    min-height: 0;
+  }
+
+  .art {
+    inset-inline-start: -160px;
+    top: 150px;
+    width: 760px;
+  }
+
+  .logoLink {
+    inset-inline-start: var(--space-gutter);
+    top: 20px;
+  }
+
+  .logo {
+    height: 34px;
+  }
+
+  .caption {
+    bottom: 20px;
+  }
+
+  .content {
+    position: static;
+    padding: 48px var(--space-gutter) 64px;
+  }
+
+  .nav {
+    position: absolute;
+    top: 20px;
+    inset-inline-end: var(--space-gutter);
+    z-index: 5;
+    color: var(--color-cream);
+  }
+
+  .story {
+    gap: 24px;
+    margin-top: 0;
+  }
+
+  .title {
+    font-size: 46px;
+    letter-spacing: var(--tracking-snug);
+  }
+
+  .columns {
+    gap: 24px;
+    margin-top: 0;
+  }
+}

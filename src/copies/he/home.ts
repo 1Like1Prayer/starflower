@@ -17,6 +17,7 @@ export const home: Translation<typeof en> = {
     eyebrow: 'קולקציות',
     title: 'בחרו את\nהרגע שלכם',
     hint: 'העבירו את העכבר מעל קולקציה כדי לפתוח אותה. כל זר מורכב לפי הזמנה, מפרחים שנבחרים באותו היום.',
+    hintTouch: 'הקישו על קולקציה כדי לפתוח אותה. כל זר מורכב לפי הזמנה, מפרחים שנבחרים באותו היום.',
     descriptionLabel: 'תיאור',
     items: {
       signature: {
@@ -44,6 +45,7 @@ export const home: Translation<typeof en> = {
   featured: {
     eyebrow: 'נבחרים',
     groupLabel: 'זרים נבחרים',
+    swipeHint: 'החליקו או הקישו למטה',
     show: 'הצג את {{name}}',
     descriptionLabel: 'תיאור',
     items: {

@@ -12,6 +12,12 @@
   padding: var(--space-header-top) var(--space-gutter) 0;
 }
 
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .logoLink {
   align-self: flex-start;
 }
@@ -122,5 +128,70 @@
 
   .intro {
     padding-bottom: 48px;
+  }
+}
+
+/* Phone: logo and burger on top, then the steps as compact rows. */
+@media (max-width: 700px) {
+  .hero {
+    min-height: 0;
+  }
+
+  .intro {
+    padding: 20px var(--space-gutter) 48px;
+  }
+
+  .logo {
+    height: 34px;
+  }
+
+  .copy {
+    gap: 16px;
+    margin-top: 56px;
+  }
+
+  .title {
+    font-size: 46px;
+  }
+
+  .copy p {
+    margin-top: 4px;
+    font-size: var(--size-base);
+  }
+
+  .panel {
+    justify-content: flex-start;
+    gap: 0;
+    padding: 40px var(--space-gutter);
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .art {
+    inset-inline-start: -180px;
+    top: 40px;
+    width: 760px;
+  }
+
+  .steps {
+    gap: 0;
+  }
+
+  .step {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 16px;
+    padding: 16px 0;
+  }
+
+  .stepText {
+    font-size: var(--size-xl);
+  }
+
+  .sameDay {
+    margin-top: 16px;
+    font-size: var(--size-xs);
   }
 }

@@ -1,9 +1,10 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, type TouchEvent } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
 import { Eyebrow, Photo, PillButton, RoundButton } from '../../../components/ui'
 import { ROUTES } from '../../../config/routes'
 import { getBouquets, type BouquetId } from '../../../data/catalog'
+import { useScrollLock } from '../../../hooks/useScrollLock'
 import { cx } from '../../../utils/classNames'
 import { padNumber } from '../../../utils/format'
 import { ART_PLACEMENTS, GALLERY_ORDER, STRIP_SIZE } from '../data/gallery'
@@ -24,18 +25,16 @@ interface LightboxProps {
 export function Lightbox({ ids, selectedId, direction, navigation, onClose, onStep, onGoTo }: LightboxProps) {
   const { t, i18n } = useTranslation(['gallery', 'catalog', 'common'])
   const rtl = i18n.dir() === 'rtl'
+  const touchStartX = useRef<number | null>(null)
   const dialogRef = useRef<HTMLDivElement>(null)
 
-  // Focus the dialog, lock page scroll and restore both on close.
+  useScrollLock(true)
+
+  // Focus the dialog and hand focus back to whatever opened it on close.
   useEffect(() => {
     const opener = document.activeElement as HTMLElement | null
-    const overflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
     dialogRef.current?.focus({ preventScroll: true })
-    return () => {
-      document.body.style.overflow = overflow
-      opener?.focus?.({ preventScroll: true })
-    }
+    return () => opener?.focus?.({ preventScroll: true })
   }, [])
 
   useEffect(() => {
@@ -48,6 +47,19 @@ export function Lightbox({ ids, selectedId, direction, navigation, onClose, onSt
     document.addEventListener('keydown', onKeyDown)
     return () => document.removeEventListener('keydown', onKeyDown)
   }, [onClose, onStep, rtl])
+
+  // Phones: swipe the photo to step through the bouquets.
+  const onTouchStart = (event: TouchEvent) => {
+    touchStartX.current = event.touches[0]?.clientX ?? null
+  }
+  const onTouchEnd = (event: TouchEvent) => {
+    const start = touchStartX.current
+    const end = event.changedTouches[0]?.clientX
+    touchStartX.current = null
+    if (start == null || end == null || Math.abs(end - start) < 40) return
+    const forward = rtl ? end > start : end < start
+    onStep(forward ? 1 : -1)
+  }
 
   const bouquets = getBouquets(ids)
   const index = ids.indexOf(selectedId)
@@ -74,7 +86,7 @@ export function Lightbox({ ids, selectedId, direction, navigation, onClose, onSt
             <h2>{name}</h2>
           </div>
           <div className={styles.headerActions}>
-            <span aria-live="polite" className={styles.position}>
+            <span dir="ltr" aria-live="polite" className={styles.position}>
               {t('lightbox.position', { current: padNumber(index + 1), total: padNumber(bouquets.length) })}
             </span>
             <RoundButton label={t('common:actions.close')} onClick={onClose}>
@@ -86,7 +98,7 @@ export function Lightbox({ ids, selectedId, direction, navigation, onClose, onSt
         </div>
 
         <div className={styles.body}>
-          <div className={styles.slides}>
+          <div className={styles.slides} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
             {bouquets.map((bouquet, i) => {
               const position = i === index ? 'on' : i < index ? 'before' : 'after'
               return (

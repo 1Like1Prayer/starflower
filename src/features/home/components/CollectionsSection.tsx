@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { BotanicalArt, ColumnPin, Eyebrow, ExpandColumns, Photo, PillButton, Reveal, SectionHeading } from '../../../components/ui'
+import { MOBILE_QUERY } from '../../../config/breakpoints'
 import { ROUTES } from '../../../config/routes'
+import { useMediaQuery } from '../../../hooks/useMediaQuery'
 import { padNumber } from '../../../utils/format'
 import { COLLECTIONS } from '../data/home'
 import styles from './CollectionsSection.module.css'
@@ -9,13 +11,14 @@ type Collection = (typeof COLLECTIONS)[number]
 
 export function CollectionsSection() {
   const { t } = useTranslation(['home', 'common'])
+  const touch = useMediaQuery(MOBILE_QUERY)
 
   return (
     <>
       <section className={styles.intro}>
         <SectionHeading eyebrow={t('collections.eyebrow')} title={t('collections.title')} />
         <Reveal as="p" delay={0.15} className={styles.hint}>
-          {t('collections.hint')}
+          {t(touch ? 'collections.hintTouch' : 'collections.hint')}
         </Reveal>
       </section>
 
@@ -25,6 +28,7 @@ export function CollectionsSection() {
           items={COLLECTIONS}
           getKey={(item) => item.id}
           getHref={() => ROUTES.gallery}
+          closeLabel={t('common:actions.close')}
           renderCaption={(item) => (
             <div className={styles.caption}>
               <Eyebrow>{t(`collections.items.${item.id}.label`)}</Eyebrow>

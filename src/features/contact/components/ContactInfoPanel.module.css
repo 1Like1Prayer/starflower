@@ -89,3 +89,43 @@
     max-width: none;
   }
 }
+
+@media (max-width: 700px) {
+  .panel {
+    order: 3;
+    gap: 0;
+    padding: 56px var(--space-gutter);
+  }
+
+  .art,
+  .logoLink {
+    display: none;
+  }
+
+  .info > span:first-child {
+    margin-bottom: 14px;
+    font-size: var(--size-sm);
+  }
+
+  .row {
+    gap: 4px;
+    padding: 18px 0;
+  }
+
+  .row:hover {
+    padding-inline-start: 0;
+  }
+
+  .row > :last-child {
+    font-size: var(--size-lg);
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  .socials {
+    gap: 24px;
+    margin-top: 24px;
+  }
+}

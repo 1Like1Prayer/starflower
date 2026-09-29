@@ -1,7 +1,8 @@
 import type { CSSProperties } from 'react'
 import { useTranslation } from 'react-i18next'
-import { BotanicalArt, LineHeading, Eyebrow } from '../../../components/ui'
+import { BotanicalArt, LineHeading, Eyebrow, PillButton } from '../../../components/ui'
 import { SiteHeader } from '../../../components/layout'
+import { ROUTES } from '../../../config/routes'
 import { useParallax } from '../../../hooks/useParallax'
 import styles from './Hero.module.css'
 
@@ -30,6 +31,9 @@ export function Hero() {
           </span>
           <p>{t('hero.whoText')}</p>
         </div>
+        <PillButton to={ROUTES.quickOrder} className={`fade ${styles.mobileOrder}`} >
+          {t('common:actions.orderBouquet')}
+        </PillButton>
       </div>
 
       <div className={styles.footer}>

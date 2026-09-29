@@ -52,3 +52,24 @@
     margin-bottom: 0;
   }
 }
+
+@media (max-width: 700px) {
+  .section {
+    gap: 28px;
+    min-height: 0;
+    padding: 72px var(--space-gutter);
+  }
+
+  .art {
+    inset-inline-end: -140px;
+    top: auto;
+    bottom: 30px;
+    width: 460px;
+    opacity: 0.5;
+  }
+
+  .quote {
+    font-size: 30px;
+    line-height: 1.25;
+  }
+}

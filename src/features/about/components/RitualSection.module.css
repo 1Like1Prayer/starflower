@@ -77,3 +77,57 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Phone: one column; the button follows the steps. */
+@media (max-width: 700px) {
+  .section {
+    gap: 40px;
+    padding: 64px var(--space-gutter) 72px;
+  }
+
+  .head {
+    display: contents;
+  }
+
+  .head > :first-child {
+    order: 1;
+  }
+
+  .steps {
+    order: 2;
+    gap: 36px;
+  }
+
+  .head > :last-child {
+    order: 3;
+  }
+
+  .head > :last-child > * {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: baseline;
+    gap: 14px 18px;
+  }
+
+  .step:hover {
+    transform: none;
+  }
+
+  .bar,
+  .step p {
+    grid-column: 1 / -1;
+  }
+
+  .number {
+    font-size: 40px;
+  }
+
+  .step h3 {
+    font-size: var(--size-xl);
+  }
+}

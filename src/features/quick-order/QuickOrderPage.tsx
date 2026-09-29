@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { PageShell } from '../../components/layout'
-import { AutoHeight, ChipGroup } from '../../components/ui'
+import { AutoHeight, ChipGroup, PagedGrid } from '../../components/ui'
 import { BOUQUETS, getBouquets } from '../../data/catalog'
 import { useAnimatedFilter } from '../../hooks/useAnimatedFilter'
 import { cx } from '../../utils/classNames'
@@ -22,6 +22,7 @@ export function QuickOrderPage() {
 
       <section className={styles.toolbar}>
         <ChipGroup
+          scrollOnPhone
           label={t('filters.label')}
           options={SHOP_FILTERS.map((value) => ({
             value,
@@ -36,12 +37,12 @@ export function QuickOrderPage() {
       </section>
 
       <section className={styles.shop}>
-        <AutoHeight>
-          <div key={filter.generation} className={styles.grid} data-leaving={filter.leaving}>
+        <AutoHeight hold>
+          <PagedGrid gridClassName={styles.grid} pageClassName={styles.page} generation={filter.generation} leaving={filter.leaving}>
             {getBouquets(visible).map((bouquet, order) => (
               <ProductCard key={bouquet.id} bouquet={bouquet} order={order} />
             ))}
-          </div>
+          </PagedGrid>
         </AutoHeight>
       </section>
 

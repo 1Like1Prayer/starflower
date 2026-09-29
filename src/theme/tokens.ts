@@ -87,9 +87,9 @@ export const tokens = {
   },
 
   space: {
-    gutter: 'clamp(20px, 5.6vw, 80px)',
+    gutter: 'clamp(24px, 5.6vw, 80px)',
     section: 'clamp(64px, 8vw, 120px)',
-    headerTop: '44px',
+    headerTop: 'clamp(20px, 5vw, 44px)',
   },
 
   radius: {

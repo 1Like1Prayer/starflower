@@ -72,6 +72,10 @@
   background: currentColor;
 }
 
+.buy {
+  display: none;
+}
+
 .details {
   display: flex;
   flex-direction: column;
@@ -168,5 +172,78 @@
   from {
     transform: scale(1.35) rotate(-4deg);
     opacity: 0;
+  }
+}
+
+/* Phone: compact card inside a 300px page row. */
+@media (max-width: 700px) {
+  .card {
+    height: 100%;
+    gap: 10px;
+  }
+
+  .photo {
+    height: 180px;
+    flex-shrink: 0;
+  }
+
+  .quick {
+    display: none;
+  }
+
+  .buy {
+    position: absolute;
+    inset-inline-end: 10px;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-round);
+    background: var(--color-cream);
+    color: var(--color-forest);
+    font-size: var(--size-md);
+    transform: scaleX(var(--dir));
+  }
+
+  .details {
+    flex-grow: 1;
+    min-height: 0;
+    gap: 4px;
+  }
+
+  .details > span:first-child {
+    font-size: var(--size-micro);
+  }
+
+  .name {
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: var(--size-md);
+    line-height: 1.2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .stems {
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 1.4;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .footer {
+    padding-top: 8px;
+    font-size: 12px;
+  }
+
+  .price {
+    font-size: var(--size-base);
+  }
+
+  .footer .arrow {
+    display: none;
   }
 }
